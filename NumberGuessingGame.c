@@ -18,14 +18,20 @@ int main(){
         printf("-------------------------------------\n");
         numberOfGuesses++;
 
-        if(guessNumber > randomNumber){
-            printf("\tThe number is too high.\n");
-        }  
-        else if(guessNumber < randomNumber){
-            printf("\tThe number is too low.\n");
+        if(guessNumber<=100 && guessNumber>=0){
+            if(guessNumber > randomNumber){
+                printf("\tThe number is too high.\n");
+            }  
+            else if(guessNumber < randomNumber){
+                printf("\tThe number is too low.\n");
+            }
+            else {
+                printf("\n!!!Congratulations!!! You have guessed the number in %d guesses\n", numberOfGuesses);
+            }
         }
-        else {
-            printf("\n!!!Congratulations!!! You have guessed the number in %d guesses\n", numberOfGuesses);
+
+        else{
+            printf("\tPlease input a number between 1 to 100.\n");
         }
     } while (guessNumber != randomNumber);
 
